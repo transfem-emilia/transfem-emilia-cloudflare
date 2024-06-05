@@ -25,8 +25,6 @@
         }
         button {
             margin: 5px;
-        }
-        #dark-mode-toggle, #fullscreen-toggle {
             padding: 10px 20px;
             background-color: #ff5722;
             border: none;
@@ -40,49 +38,98 @@
             margin: 10px auto;
         }
     </style>
+    <!-- Preload SWF files -->
+    <link rel="preload" href="swfs/papalouie_v2.swf" as="object">
+    <link rel="preload" href="swfs/PapaLouie2.swf" as="object">
+    <link rel="preload" href="swfs/PapaLouie3.swf" as="object">
+    <link rel="preload" href="swfs/papasbakeria.swf" as="object">
+    <link rel="preload" href="swfs/papasburgeria.swf" as="object">
+    <link rel="preload" href="swfs/papascheeseria_102.swf" as="object">
+    <link rel="preload" href="swfs/papascupcakeria.swf" as="object">
+    <link rel="preload" href="swfs/papasdonuteria.swf" as="object">
+    <link rel="preload" href="swfs/papasfreezeria.swf" as="object">
+    <link rel="preload" href="swfs/papashotdoggeria.swf" as="object">
+    <link rel="preload" href="swfs/papaspancakeria.swf" as="object">
+    <link rel="preload" href="swfs/papaspastaria.swf" as="object">
+    <link rel="preload" href="swfs/papaspizzeria_v2.swf" as="object">
+    <link rel="preload" href="swfs/papasscooperia_v102.swf" as="object">
+    <link rel="preload" href="swfs/papassushiria.swf" as="object">
+    <link rel="preload" href="swfs/papastacomia.swf" as="object">
+    <link rel="preload" href="swfs/papaswingeria.swf" as="object">
 </head>
 <body class="dark-mode">
-    <div class="buttons">
-        <button onclick="loadSWF('swfs/papalouie_v2.swf')">Play Papa Louie 1</button>
-        <button onclick="loadSWF('swfs/PapaLouie2.swf')">Play Papa Louie 2</button>
-        <button onclick="loadSWF('swfs/PapaLouie3.swf')">Play Papa Louie 3</button>
-        <button onclick="loadSWF('swfs/papasbakeria.swf')">Play Papa's Bakeria</button>
-        <button onclick="loadSWF('swfs/papasburgeria.swf')">Play Papa's Burgeria</button>
-        <button onclick="loadSWF('swfs/papascheeseria_102.swf')">Play Papa's Cheeseria</button>
-        <button onclick="loadSWF('swfs/papascupcakeria.swf')">Play Papa's Cupcakeria</button>
-        <button onclick="loadSWF('swfs/papasdonuteria.swf')">Play Papa's Donuteria</button>
-        <button onclick="loadSWF('swfs/papasfreezeria.swf')">Play Papa's Freezeria</button>
-        <button onclick="loadSWF('swfs/papashotdoggeria.swf')">Play Papa's Hot Doggeria</button>
-        <button onclick="loadSWF('swfs/papaspancakeria.swf')">Play Papa's Pancakeria</button>
-        <button onclick="loadSWF('swfs/papaspastaria.swf')">Play Papa's Pastaria</button>
-        <button onclick="loadSWF('swfs/papaspizzeria_v2.swf')">Play Papa's Pizzeria</button>
-        <button onclick="loadSWF('swfs/papasscooperia_v102.swf')">Play Papa's Scooperia</button>
-        <button onclick="loadSWF('swfs/papassushiria.swf')">Play Papa's Sushiria</button>
-        <button onclick="loadSWF('swfs/papastacomia.swf')">Play Papa's Taco Mia</button>
-        <button onclick="loadSWF('swfs/papaswingeria.swf')">Play Papa's Wingeria</button>
-    </div>
+    <div class="buttons"></div>
     <div id="swf-container"></div>
 
     <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     <button id="fullscreen-toggle" onclick="toggleFullscreen()">Fullscreen</button>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
             window.RufflePlayer = window.RufflePlayer || {};
-            window.RufflePlayer.config = {};
+            window.RufflePlayer.config = {
+                core: {
+                    log_level: "error",
+                },
+                renderer: {
+                    background_color: 0x000000,
+                    antialias: false,
+                },
+                audio: {
+                    dynamic_audio_buffer: false,
+                },
+            };
+
             const ruffle = window.RufflePlayer.newest();
-            window.ruffleInstance = ruffle.createPlayer();
-            window.ruffleInstance.style.width = '100%';
-            window.ruffleInstance.style.height = '100%';
-            document.getElementById('swf-container').appendChild(window.ruffleInstance);
-            document.body.classList.add('dark-mode'); // Enable dark mode by default
+            const ruffleInstance = ruffle.createPlayer();
+            ruffleInstance.style.width = '100%';
+            ruffleInstance.style.height = '100%';
+            document.getElementById('swf-container').appendChild(ruffleInstance);
+            window.ruffleInstance = ruffleInstance;
+
+            const gameList = [
+                { name: "Papa Louie 1", file: "swfs/papalouie_v2.swf" },
+                { name: "Papa Louie 2", file: "swfs/PapaLouie2.swf" },
+                { name: "Papa Louie 3", file: "swfs/PapaLouie3.swf" },
+                { name: "Papa's Bakeria", file: "swfs/papasbakeria.swf" },
+                { name: "Papa's Burgeria", file: "swfs/papasburgeria.swf" },
+                { name: "Papa's Cheeseria", file: "swfs/papascheeseria_102.swf" },
+                { name: "Papa's Cupcakeria", file: "swfs/papascupcakeria.swf" },
+                { name: "Papa's Donuteria", file: "swfs/papasdonuteria.swf" },
+                { name: "Papa's Freezeria", file: "swfs/papasfreezeria.swf" },
+                { name: "Papa's Hot Doggeria", file: "swfs/papashotdoggeria.swf" },
+                { name: "Papa's Pancakeria", file: "swfs/papaspancakeria.swf" },
+                { name: "Papa's Pastaria", file: "swfs/papaspastaria.swf" },
+                { name: "Papa's Pizzeria", file: "swfs/papaspizzeria_v2.swf" },
+                { name: "Papa's Scooperia", file: "swfs/papasscooperia_v102.swf" },
+                { name: "Papa's Sushiria", file: "swfs/papassushiria.swf" },
+                { name: "Papa's Taco Mia", file: "swfs/papastacomia.swf" },
+                { name: "Papa's Wingeria", file: "swfs/papaswingeria.swf" }
+            ];
+
+            const buttonsContainer = document.querySelector('.buttons');
+            gameList.forEach(game => {
+                const button = document.createElement('button');
+                button.textContent = `Play ${game.name}`;
+                button.onclick = () => loadSWF(game.file);
+                buttonsContainer.appendChild(button);
+            });
+
+            document.body.classList.add('dark-mode');
         });
 
         function loadSWF(swfPath) {
             if (window.ruffleInstance) {
-                window.ruffleInstance.load({
-                    url: swfPath
-                });
+                window.ruffleInstance.load({ url: swfPath });
             }
         }
 
@@ -91,27 +138,11 @@
         }
 
         function toggleFullscreen() {
-            const elem = window.ruffleInstance;
+            const elem = document.getElementById('swf-container');
             if (!document.fullscreenElement) {
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                } else if (elem.mozRequestFullScreen) { // Firefox
-                    elem.mozRequestFullScreen();
-                } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                    elem.webkitRequestFullscreen();
-                } else if (elem.msRequestFullscreen) { // IE/Edge
-                    elem.msRequestFullscreen();
-                }
+                elem.requestFullscreen().catch(err => console.log(`Error attempting to enable full-screen mode: ${err.message}`));
             } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.mozCancelFullScreen) { // Firefox
-                    document.mozCancelFullScreen();
-                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) { // IE/Edge
-                    document.msExitFullscreen();
-                }
+                document.exitFullscreen().catch(err => console.log(`Error attempting to exit full-screen mode: ${err.message}`));
             }
         }
     </script>
