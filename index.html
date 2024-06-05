@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruffle SWF Player</title>
+    <script src="ruffle/ruffle.js"></script>
+    <style>
+        #swf-container {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 20px auto;
+        }
+        .buttons {
+            text-align: center;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="loadSWF('swfs/papalouie_v2.swf')">Play Papa Louie 1</button>
+        <button onclick="loadSWF('swfs/PapaLouie2.swf')">Play Papa Louie 2</button>
+        <button onclick="loadSWF('swfs/PapaLouie3.swf')">Play Papa Louie 3</button>
+        <button onclick="loadSWF('swfs/papasbakeria.swf')">Play Papa's Bakeria</button>
+        <button onclick="loadSWF('swfs/papasburgeria.swf')">Play Papa's Burgeria</button>
+        <button onclick="loadSWF('swfs/papascheeseria_102.swf')">Play Papa's Cheeseria</button>
+        <button onclick="loadSWF('swfs/papascupcakeria.swf')">Play Papa's Cupcakeria</button>
+        <button onclick="loadSWF('swfs/papasdonuteria.swf')">Play Papa's Donuteria</button>
+        <button onclick="loadSWF('swfs/papasfreezeria.swf')">Play Papa's Freezeria</button>
+        <button onclick="loadSWF('swfs/papashotdoggeria.swf')">Play Papa's Hot Doggeria</button>
+        <button onclick="loadSWF('swfs/papaspancakeria.swf')">Play Papa's Pancakeria</button>
+        <button onclick="loadSWF('swfs/papaspastaria.swf')">Play Papa's Pastaria</button>
+        <button onclick="loadSWF('swfs/papaspizzeria_v2.swf')">Play Papa's Pizzeria</button>
+        <button onclick="loadSWF('swfs/papasscooperia_v102.swf')">Play Papa's Scooperia</button>
+        <button onclick="loadSWF('swfs/papassushiria.swf')">Play Papa's Sushiria</button>
+        <button onclick="loadSWF('swfs/papastacomia.swf')">Play Papa's Taco Mia</button>
+        <button onclick="loadSWF('swfs/papaswingeria.swf')">Play Papa's Wingeria</button>
+    </div>
+    <div id="swf-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            window.RufflePlayer = window.RufflePlayer || {};
+            window.RufflePlayer.config = {};
+            const ruffle = window.RufflePlayer.newest();
+            window.ruffleInstance = ruffle.createPlayer();
+            document.getElementById('swf-container').appendChild(window.ruffleInstance);
+        });
+
+        function loadSWF(swfPath) {
+            if (window.ruffleInstance) {
+                window.ruffleInstance.load({
+                    url: swfPath
+                });
+            }
+        }
+    </script>
+</body>
+</html>
 
