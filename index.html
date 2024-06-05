@@ -17,6 +17,7 @@
             border: 1px solid #ffffff;
             margin: 20px auto;
             background-color: #333333;
+            position: relative;
         }
         .buttons {
             text-align: center;
@@ -26,10 +27,9 @@
             margin: 5px;
         }
         #dark-mode-toggle, #fullscreen-toggle {
-            position: fixed;
+            position: absolute;
             bottom: 10px;
             right: 10px;
-            margin: 5px;
             padding: 10px 20px;
             background-color: #ff5722;
             border: none;
@@ -39,7 +39,8 @@
             border-radius: 5px;
         }
         #fullscreen-toggle {
-            right: 140px;
+            bottom: 10px;
+            right: 130px;
         }
     </style>
 </head>
@@ -63,10 +64,11 @@
         <button onclick="loadSWF('swfs/papastacomia.swf')">Play Papa's Taco Mia</button>
         <button onclick="loadSWF('swfs/papaswingeria.swf')">Play Papa's Wingeria</button>
     </div>
-    <div id="swf-container"></div>
+    <div id="swf-container">
+        <button id="fullscreen-toggle" onclick="toggleFullscreen()">Fullscreen</button>
+    </div>
 
     <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-    <button id="fullscreen-toggle" onclick="toggleFullscreen()">Fullscreen</button>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -74,6 +76,8 @@
             window.RufflePlayer.config = {};
             const ruffle = window.RufflePlayer.newest();
             window.ruffleInstance = ruffle.createPlayer();
+            window.ruffleInstance.style.width = '100%';
+            window.ruffleInstance.style.height = '100%';
             document.getElementById('swf-container').appendChild(window.ruffleInstance);
             document.body.classList.add('dark-mode'); // Enable dark mode by default
         });
