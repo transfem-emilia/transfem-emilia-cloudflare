@@ -27,9 +27,6 @@
             margin: 5px;
         }
         #dark-mode-toggle, #fullscreen-toggle {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
             padding: 10px 20px;
             background-color: #ff5722;
             border: none;
@@ -39,8 +36,8 @@
             border-radius: 5px;
         }
         #fullscreen-toggle {
-            bottom: 10px;
-            right: 130px;
+            display: block;
+            margin: 10px auto;
         }
     </style>
 </head>
@@ -64,11 +61,10 @@
         <button onclick="loadSWF('swfs/papastacomia.swf')">Play Papa's Taco Mia</button>
         <button onclick="loadSWF('swfs/papaswingeria.swf')">Play Papa's Wingeria</button>
     </div>
-    <div id="swf-container">
-        <button id="fullscreen-toggle" onclick="toggleFullscreen()">Fullscreen</button>
-    </div>
+    <div id="swf-container"></div>
 
     <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <button id="fullscreen-toggle" onclick="toggleFullscreen()">Fullscreen</button>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
