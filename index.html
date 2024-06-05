@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Papa's Games Archive By monkeys-canada</title>
-    <script src="ruffle/ruffle.js"></script>
     <style>
         body.dark-mode {
             background-color: #121212;
@@ -38,111 +37,74 @@
             margin: 10px auto;
         }
     </style>
-    <!-- Preload SWF files -->
-    <link rel="preload" href="swfs/papalouie_v2.swf" as="object">
-    <link rel="preload" href="swfs/PapaLouie2.swf" as="object">
-    <link rel="preload" href="swfs/PapaLouie3.swf" as="object">
-    <link rel="preload" href="swfs/papasbakeria.swf" as="object">
-    <link rel="preload" href="swfs/papasburgeria.swf" as="object">
-    <link rel="preload" href="swfs/papascheeseria_102.swf" as="object">
-    <link rel="preload" href="swfs/papascupcakeria.swf" as="object">
-    <link rel="preload" href="swfs/papasdonuteria.swf" as="object">
-    <link rel="preload" href="swfs/papasfreezeria.swf" as="object">
-    <link rel="preload" href="swfs/papashotdoggeria.swf" as="object">
-    <link rel="preload" href="swfs/papaspancakeria.swf" as="object">
-    <link rel="preload" href="swfs/papaspastaria.swf" as="object">
-    <link rel="preload" href="swfs/papaspizzeria_v2.swf" as="object">
-    <link rel="preload" href="swfs/papasscooperia_v102.swf" as="object">
-    <link rel="preload" href="swfs/papassushiria.swf" as="object">
-    <link rel="preload" href="swfs/papastacomia.swf" as="object">
-    <link rel="preload" href="swfs/papaswingeria.swf" as="object">
 </head>
 <body class="dark-mode">
     <div class="buttons"></div>
     <div id="swf-container"></div>
 
-    <button id="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-    <button id="fullscreen-toggle" onclick="toggleFullscreen()">Fullscreen</button>
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    <button id="fullscreen-toggle">Fullscreen</button>
 
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then((registration) => {
-                    console.log('Service Worker registered with scope:', registration.scope);
-                }).catch((error) => {
-                    console.log('Service Worker registration failed:', error);
-                });
-        }
-
         document.addEventListener("DOMContentLoaded", () => {
-            window.RufflePlayer = window.RufflePlayer || {};
-            window.RufflePlayer.config = {
-                core: {
-                    log_level: "error",
-                },
-                renderer: {
-                    background_color: 0x000000,
-                    antialias: false,
-                },
-                audio: {
-                    dynamic_audio_buffer: false,
-                },
-            };
-
-            const ruffle = window.RufflePlayer.newest();
-            const ruffleInstance = ruffle.createPlayer();
-            ruffleInstance.style.width = '100%';
-            ruffleInstance.style.height = '100%';
-            document.getElementById('swf-container').appendChild(ruffleInstance);
-            window.ruffleInstance = ruffleInstance;
-
             const gameList = [
-                { name: "Papa Louie 1", file: "swfs/papalouie_v2.swf" },
-                { name: "Papa Louie 2", file: "swfs/PapaLouie2.swf" },
-                { name: "Papa Louie 3", file: "swfs/PapaLouie3.swf" },
-                { name: "Papa's Bakeria", file: "swfs/papasbakeria.swf" },
-                { name: "Papa's Burgeria", file: "swfs/papasburgeria.swf" },
-                { name: "Papa's Cheeseria", file: "swfs/papascheeseria_102.swf" },
-                { name: "Papa's Cupcakeria", file: "swfs/papascupcakeria.swf" },
-                { name: "Papa's Donuteria", file: "swfs/papasdonuteria.swf" },
-                { name: "Papa's Freezeria", file: "swfs/papasfreezeria.swf" },
-                { name: "Papa's Hot Doggeria", file: "swfs/papashotdoggeria.swf" },
-                { name: "Papa's Pancakeria", file: "swfs/papaspancakeria.swf" },
-                { name: "Papa's Pastaria", file: "swfs/papaspastaria.swf" },
-                { name: "Papa's Pizzeria", file: "swfs/papaspizzeria_v2.swf" },
-                { name: "Papa's Scooperia", file: "swfs/papasscooperia_v102.swf" },
-                { name: "Papa's Sushiria", file: "swfs/papassushiria.swf" },
-                { name: "Papa's Taco Mia", file: "swfs/papastacomia.swf" },
-                { name: "Papa's Wingeria", file: "swfs/papaswingeria.swf" }
+                { name: "Papa Louie 1", file: "papalouie_v2.swf" },
+                { name: "Papa Louie 2", file: "PapaLouie2.swf" },
+                { name: "Papa Louie 3", file: "PapaLouie3.swf" },
+                { name: "Papa's Bakeria", file: "papasbakeria.swf" },
+                { name: "Papa's Burgeria", file: "papasburgeria.swf" },
+                { name: "Papa's Cheeseria", file: "papascheeseria_102.swf" },
+                { name: "Papa's Cupcakeria", file: "papascupcakeria.swf" },
+                { name: "Papa's Donuteria", file: "papasdonuteria.swf" },
+                { name: "Papa's Freezeria", file: "papasfreezeria.swf" },
+                { name: "Papa's Hot Doggeria", file: "papashotdoggeria.swf" },
+                { name: "Papa's Pancakeria", file: "papaspancakeria.swf" },
+                { name: "Papa's Pastaria", file: "papaspastaria.swf" },
+                { name: "Papa's Pizzeria", file: "papaspizzeria_v2.swf" },
+                { name: "Papa's Scooperia", file: "papasscooperia_v102.swf" },
+                { name: "Papa's Sushiria", file: "papassushiria.swf" },
+                { name: "Papa's Taco Mia", file: "papastacomia.swf" },
+                { name: "Papa's Wingeria", file: "papaswingeria.swf" }
             ];
 
             const buttonsContainer = document.querySelector('.buttons');
+            const swfContainer = document.getElementById('swf-container');
+
             gameList.forEach(game => {
                 const button = document.createElement('button');
                 button.textContent = `Play ${game.name}`;
-                button.onclick = () => loadSWF(game.file);
+                button.onclick = () => loadSWF(`swfs/${game.file}`);
                 buttonsContainer.appendChild(button);
             });
 
+            document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+            document.getElementById('fullscreen-toggle').addEventListener('click', toggleFullscreen);
             document.body.classList.add('dark-mode');
         });
 
-        function loadSWF(swfPath) {
-            if (window.ruffleInstance) {
-                window.ruffleInstance.load({ url: swfPath });
-            }
+        async function loadSWF(swfPath) {
+            swfContainer.innerHTML = '';
+            const ruffle = await window.RufflePlayer.instantiate();
+            ruffle.style.width = '100%';
+            ruffle.style.height = '100%';
+            swfContainer.appendChild(ruffle);
+            await ruffle.load({ url: swfPath });
         }
 
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
 
-        function toggleFullscreen() {
+        async function toggleFullscreen() {
             const elem = document.getElementById('swf-container');
-            if (!document.fullscreenElement) {
-                elem.requestFullscreen().catch(err => console.log(`Error attempting to enable full-screen mode: ${err.message}`));
-            } else {
-                document.exitFullscreen().catch(err => console.log(`Error attempting to exit full-screen mode: ${err.message}`));
+            try {
+                if (!document.fullscreenElement) {
+                    await elem.requestFullscreen();
+                } else {
+                    await document.exitFullscreen();
+                }
+            } catch (err) {
+                console.error(`Fullscreen error: ${err.message}`);
             }
         }
     </script>
