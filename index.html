@@ -62,7 +62,6 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            window
             window.RufflePlayer = window.RufflePlayer || {};
             window.RufflePlayer.config = {};
             const ruffle = window.RufflePlayer.newest();
@@ -83,7 +82,7 @@
         }
 
         function toggleFullscreen() {
-            const elem = document.getElementById('swf-container');
+            const elem = window.ruffleInstance;
             if (!document.fullscreenElement) {
                 if (elem.requestFullscreen) {
                     elem.requestFullscreen();
@@ -109,4 +108,3 @@
     </script>
 </body>
 </html>
-
