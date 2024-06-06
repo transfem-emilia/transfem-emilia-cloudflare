@@ -37,6 +37,8 @@
             margin: 10px auto;
         }
     </style>
+    <!-- Include Ruffle JS -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </head>
 <body class="dark-mode">
     <div class="buttons"></div>
@@ -82,9 +84,11 @@
             document.body.classList.add('dark-mode');
         });
 
+        const swfContainer = document.getElementById('swf-container');
+
         async function loadSWF(swfPath) {
             swfContainer.innerHTML = '';
-            const ruffle = await window.RufflePlayer.instantiate();
+            const ruffle = window.RufflePlayer.newest().createPlayer();
             ruffle.style.width = '100%';
             ruffle.style.height = '100%';
             swfContainer.appendChild(ruffle);
