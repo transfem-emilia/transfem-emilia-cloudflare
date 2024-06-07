@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Papa's Games Archive By monkeys-canada</title>
     <style>
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('fonts/SFProDisplay-Bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: bold;
+        }
+
         body.dark-mode {
             background-color: #121212;
             color: #ffffff;
@@ -31,10 +43,22 @@
             cursor: pointer;
             font-size: 16px;
             border-radius: 5px;
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: bold;
         }
         #fullscreen-toggle {
             display: block;
             margin: 10px auto;
+        }
+        .footer-text {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: bold;
         }
     </style>
     <!-- Include Ruffle JS -->
@@ -46,6 +70,8 @@
 
     <button id="dark-mode-toggle">Toggle Dark Mode</button>
     <button id="fullscreen-toggle">Fullscreen</button>
+
+    <div class="footer-text">Papa's Game Archive By Monkeys Canada Version 1.1</div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
