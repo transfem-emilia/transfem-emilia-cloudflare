@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papa's Games Archive By monkeys-canada</title>
+    <style>
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: url('fonts/SFProDisplay-Bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: bold;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        #swf-container {
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            border: 1px solid #ffffff;
+            margin: 20px auto;
+            background-color: #333333;
+            position: relative;
+        }
+        .buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #ff5722;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: bold;
+        }
+        #fullscreen-toggle {
+            display: block;
+            margin: 10px auto;
+        }
+        .footer-text {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            font-family: 'SF Pro Display', sans-serif;
+            font-weight: bold;
+        }
+    </style>
+    <!-- Include Ruffle JS -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body class="dark-mode">
+    <div class="buttons"></div>
+    <div id="swf-container"></div>
+
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    <button id="fullscreen-toggle">Fullscreen</button>
+
+    <div class="footer-text">Papa's Game Archive By Monkeys Canada Version 1.2</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const gameList = [
+                { name: "Papa Louie 1", file: "papalouie_v2.swf" },
+                { name: "Papa Louie 2", file: "PapaLouie2.swf" },
+                { name: "Papa Louie 3", file: "PapaLouie3.swf" },
+                { name: "Papa's Bakeria", file: "papasbakeria.swf" },
+                { name: "Papa's Burgeria", file: "papasburgeria.swf" },
+                { name: "Papa's Cheeseria", file: "papascheeseria_102.swf" },
+                { name: "Papa's Cupcakeria", file: "papascupcakeria.swf" },
+                { name: "Papa's Donuteria", file: "papasdonuteria.swf" },
+                { name: "Papa's Freezeria", file: "papasfreezeria.swf" },
+                { name: "Papa's Hot Doggeria", file: "papashotdoggeria.swf" },
+                { name: "Papa's Pancakeria", file: "papaspancakeria.swf" },
+                { name: "Papa's Pastaria", file: "papaspastaria.swf" },
+                { name: "Papa's Pizzeria", file: "papaspizzeria_v2.swf" },
+                { name: "Papa's Scooperia", file: "papasscooperia_v102.swf" },
+                { name: "Papa's Sushiria", file: "papassushiria.swf" },
+                { name: "Papa's Taco Mia", file: "papastacomia.swf" },
+                { name: "Papa's Wingeria", file: "papaswingeria.swf" }
+            ];
+
+            const buttonsContainer = document.querySelector('.buttons');
+            const swfContainer = document.getElementById('swf-container');
+
+            gameList.forEach(game => {
+                const button = document.createElement('button');
+                button.textContent = `Play ${game.name}`;
+                button.onclick = () => loadSWF(`swfs/${game.file}`);
+                buttonsContainer.appendChild(button);
+            });
+
+            document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+            document.getElementById('fullscreen-toggle').addEventListener('click', toggleFullscreen);
+            document.body.classList.add('dark-mode');
+        });
+
+        const swfContainer = document.getElementById('swf-container');
+
+        async function loadSWF(swfPath) {
+            swfContainer.innerHTML = '';
+            const ruffle = window.RufflePlayer.newest().createPlayer();
+            ruffle.style.width = '100%';
+            ruffle.style.height = '100%';
+            swfContainer.appendChild(ruffle);
+            await ruffle.load({ url: swfPath });
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        async function toggleFullscreen() {
+            const elem = document.getElementById('swf-container');
+            try {
+                if (!document.fullscreenElement) {
+                    await elem.requestFullscreen();
+                } else {
+                    await document.exitFullscreen();
+                }
+            } catch (err) {
+                console.error(`Fullscreen error: ${err.message}`);
+            }
+        }
+    </script>
+</body>
+</html>
