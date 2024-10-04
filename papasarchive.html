@@ -121,7 +121,7 @@
 
             gameList.forEach(game => {
                 const button = document.createElement('button');
-                button.textContent = `Play ${game.name}`;
+                button.textContent = `${game.name}`;
                 button.onclick = () => loadSWF(`swfs/${game.file}`);
                 buttonsContainer.appendChild(button);
             });
