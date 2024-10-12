@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Papa's Game Archive - Monkeys Canada" />
-    <meta property="og:description" content="Play All Of The Papa's Games | Monkeys Canada" />
-    <meta property="og:url" content="https://monkeys-canada.github.io/papasarchive.html" />
+    <meta property="og:title" content="Papa's Game Archive - Monkeys Canada BETA" />
+    <meta property="og:description" content="Play All Of The Papa's Games | Monkeys Canada BETA" />
+    <meta property="og:url" content="https://monkeys-canada.github.io/betasite/papasarchive.html" />
     <meta property="og:image" content="https://monkeys-canada.github.io/PROFILE%20PICTURE%20PINK.jpg" />
     <meta property="og:type" content="website" />
-    <title>Papa's Games Archive - Monkeys Canada</title>
-    <link rel="shortcut icon" type="image/x-icon" href="PROFILE PICTURE PINK.ico">
+    <title>Papa's Games Archive - Monkeys Canada BETA</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/PROFILE PICTURE PINK.ico">
     <style>
         @font-face {
             font-family: 'SF Pro Display', sans-serif;
@@ -21,11 +21,9 @@
         body {
             font-family: 'SF Pro Display', sans-serif;
             font-weight: bold;
+            background-color: #ffe4e9; /* Set background color */
         }
 
-        body.dark-mode {
-            background-color: black;
-        }
         #swf-container {
             width: 100%;
             max-width: 800px;
@@ -76,23 +74,29 @@
             color: white;
             text-decoration: none;
         }
+        h3 {
+            color: #2c2c2c; /* Set text color for h3 elements */
+        }
+        a {
+            color: #ff007f; /* Set link color */
+            text-decoration: none; /* Remove underline from links */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline links on hover */
+        }
     </style>
     <!-- Include Ruffle JS -->
     <script src="/ruffle/ruffle.js"></script>
     <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
 </head>
-<body class="dark-mode">
-    <img src="PROFILE PICTURE PINK.jpg" alt="Monkeys Canada Profile Picture" style="display: block; margin: 0 auto; width: 128px; height: 128px;" />
-    <h3 style="color: white; text-align: center;"><a style="font-size: 22pt; color: white; " href="https://monkeys-canada.github.io/index.html">Home</a></h3>
-    <p style="color:black;">spacer</p>
-    <p style="color:black;">spacer</p>
+<body>
+    <img src="/PROFILE PICTURE PINK.jpg" alt="Monkeys Canada Profile Picture" style="display: block; margin: 0 auto; width: 128px; height: 128px;" />
+    <h3 style="text-align: center;"><a style="font-size: 22pt;" href="https://monkeys-canada.github.io/betasite/index.html">Home</a></h3>
+    <p style="color:#ffe4e9;">spacer</p>
+    <p style="color:#ffe4e9;">spacer</p>
     <div class="buttons"></div>
     <div id="swf-container"></div>
-
-
     <button id="fullscreen-toggle">Fullscreen</button>
-
-
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -122,7 +126,7 @@
             gameList.forEach(game => {
                 const button = document.createElement('button');
                 button.textContent = `${game.name}`;
-                button.onclick = () => loadSWF(`swfs/${game.file}`);
+                button.onclick = () => loadSWF(`/swfs/${game.file}`);
                 buttonsContainer.appendChild(button);
             });
 
@@ -140,8 +144,6 @@
             await ruffle.load({ url: swfPath });
         }
 
-
-
         async function toggleFullscreen() {
             const elem = document.getElementById('swf-container');
             try {
@@ -155,17 +157,18 @@
             }
         }
     </script>
-    <h3 style="font-family: 'SF Pro Display', sans-serif; color: white; font-size: 12pt;"> Site Version 1.10</h3>
-    <h3 style="font-family: 'SF Pro Display', sans-serif; color: white; font-size: 10pt;"> Page Version 1.9</h3>
-        <h3 style="font-family: 'SF Pro Display', sans-serif; color: white; font-size: 8pt;"> 2024-10-11 Build Of Ruffle</h3>
-    <p style="color:black;">spacer</p>
-    <p style="color:black;">spacer</p>
+<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #2c2c2c; font-size: 12pt;"> MAIN Site Version 1.10</h3>
+<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #2c2c2c; font-size: 11pt;"> BETA Site Version b2.0</h2>
+<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #2c2c2c; font-size: 10pt;"> Page Version b2.0</h1>
+    <h3 style="font-size: 8pt;"> 2024-10-11 Build Of Ruffle</h3>
+    <p style="color:#ffe4e9;">spacer</p>
+    <p style="color:#ffe4e9;">spacer</p>
     <div class="centered-line">
         <a href="https://dsc.gg/monkeys-canada" class="social-icon" target="_blank"><i class="fab fa-discord"></i></a>
         <a href="https://youtube.com/@monkeyscanada" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
         <a href="https://instagram.com/monkeys.canada" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://threads.net/@monkeys.canada" class="social-icon" target="_blank"><i class="fab fa-threads"></i></a>
         <a href="https://x.com/monkeys_canada" class="social-icon" target="_blank"><i class="fab fa-x-twitter"></i></a>
-      </div>
+    </div>
 </body>
 </html>
