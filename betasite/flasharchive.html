@@ -8,7 +8,7 @@
     <meta property="og:url" content="https://monkeys-canada.github.io/betasite/flasharchive.html" />
     <meta property="og:image" content="https://monkeys-canada.github.io/PROFILE%20PICTURE%20PINK.jpg" />
     <meta property="og:type" content="website" />
-    <title>Papa's Games Archive - Monkeys Canada BETA</title>
+    <title>Fash Game Archive - Monkeys Canada BETA</title>
     <link rel="shortcut icon" type="image/x-icon" href="/PROFILE PICTURE PINK.ico">
     <style>
         @font-face {
@@ -99,10 +99,26 @@
     <!-- Include Ruffle JS -->
     <script src="/ruffle/ruffle.js"></script>
     <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
+    <script>
+        // Function to check if the device is mobile
+        function isMobile() {
+          return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
+        }
+    
+        // Apply underline to all links if the device is mobile
+        if (isMobile()) {
+          document.addEventListener('DOMContentLoaded', function() {
+            var links = document.querySelectorAll('a');
+            links.forEach(function(link) {
+              link.style.textDecoration = 'underline';
+            });
+          });
+        }
+      </script>
 </head>
 <body>
     <img src="/PROFILE PICTURE PINK.jpg" alt="Monkeys Canada Profile Picture" style="display: block; margin: 0 auto; width: 128px; height: 128px;" />
-    <h3 style="text-align: center;"><a style="font-size: 22pt;" href="https://monkeys-canada.github.io/betasite/index.html">Home</a></h3>
+    <h3 style="text-align: center;" class="outlined-text"><a style="font-size: 22pt;" href="https://monkeys-canada.github.io/betasite/index.html">Home</a></h3>
     <p style="color:#f2b3c0;">spacer</p>
     <p style="color:#f2b3c0;">spacer</p>
     <div class="buttons"></div>
@@ -168,9 +184,10 @@
             }
         }
     </script>
+    
 <h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 12pt;" class="outlined-text"> MAIN Site Version 1.10</h3>
-<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 11pt;" class="outlined-text"> BETA Site Version b2.0 Beta 5</h2>
-<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 10pt;" class="outlined-text"> Page Version b2.0 Beta 8</h1>
+<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 11pt;" class="outlined-text"> BETA Site Version b2.0 Beta 6</h2>
+<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 10pt;" class="outlined-text"> Page Version b2.0 Beta 9</h1>
 <h3 style="font-size: 8pt; color:#f36a85;" class="outlined-text"> 2024-10-11 Build Of Ruffle</h3>
     <p style="color:#f2b3c0;">spacer</p>
     <p style="color:#f2b3c0;">spacer</p>

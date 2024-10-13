@@ -66,6 +66,22 @@
     }
   </style>
   <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
+  <script>
+    // Function to check if the device is mobile
+    function isMobile() {
+      return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
+    }
+
+    // Apply underline to all links if the device is mobile
+    if (isMobile()) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('a');
+        links.forEach(function(link) {
+          link.style.textDecoration = 'underline';
+        });
+      });
+    }
+  </script>
 </head>
 
 <body>
@@ -83,8 +99,8 @@
 <p style="color: #f2b3c0;">spacer</p>
 <p style="color: #f2b3c0;">spacer</p>
 <h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 12pt;" class="outlined-text"> MAIN Site Version 1.10</h3>
-<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 11pt;" class="outlined-text"> BETA Site Version b2.0 Beta 5</h2>
-<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 10pt;" class="outlined-text"> Page Version b3.0 Beta 5</h1>
+<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 11pt;" class="outlined-text"> BETA Site Version b2.0 Beta 6</h2>
+<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 10pt;" class="outlined-text"> Page Version b3.0 Beta 6</h1>
 <p style="color: #f2b3c0;">spacer</p>
 <p style="color: #f2b3c0;">spacer</p>
 <div class="centered-line">
