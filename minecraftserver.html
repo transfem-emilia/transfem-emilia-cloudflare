@@ -19,7 +19,7 @@
     .social-icon {
       margin: 0 10px;
       font-size: 24px;
-      color: white;
+      color: #f36a85;
       text-decoration: none;
     }
     @font-face {
@@ -28,29 +28,80 @@
       font-weight: bold;
       font-style: normal;
     }
+    /* Style for text colors and links */
+    body {
+      background-color: #f2b3c0;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'SF Pro Display', sans-serif;
+      font-weight: bold;
+      color: #f36a85;
+      text-shadow: 
+                -2px -2px 0 white,  /* Top-left */
+                0px -2px 0 white,   /* Top */
+                2px -2px 0 white,   /* Top-right */
+                -2px 0px 0 white,   /* Left */
+                2px 0px 0 white,    /* Right */
+                -2px 2px 0 white,   /* Bottom-left */
+                0px 2px 0 white,    /* Bottom */
+                2px 2px 0 white;    /* Bottom-right */
+    }
+    a {
+      color: #f36a85;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .outlined-text {
+      text-shadow: 
+                -2px -2px 0 white,  /* Top-left */
+                0px -2px 0 white,   /* Top */
+                2px -2px 0 white,   /* Top-right */
+                -2px 0px 0 white,   /* Left */
+                2px 0px 0 white,    /* Right */
+                -2px 2px 0 white,   /* Bottom-left */
+                0px 2px 0 white,    /* Bottom */
+                2px 2px 0 white;    /* Bottom-right */
+    }
   </style>
   <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
+  <script>
+    // Function to check if the device is mobile
+    function isMobile() {
+      return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
+    }
+
+    // Apply underline to all links if the device is mobile
+    if (isMobile()) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('a');
+        links.forEach(function(link) {
+          link.style.textDecoration = 'underline';
+        });
+      });
+    }
+  </script>
 </head>
 
-<body style="background-color:black;">
+<body>
 
 <img src="PROFILE PICTURE PINK.jpg" alt="Your Image" style="display: block; margin: 0 auto; width: 128px; height: 128px;" />
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; text-align: center;"><a style="font-size: 22pt; color: white; " href="https://monkeys-canada.github.io/index.html">Home</a></h3>
+<h3 style="text-align: center;"><a style="font-size: 22pt;" href="https://monkeys-canada.github.io/index.html">Home</a></h3>
 <p></p>
-<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white;">Monkeys Canada Minecraft Server Info</h1>
+<h1>Monkeys Canada Minecraft Server Info</h1>
 
-<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white;">This Server Is A Java And Bedrock Server!</h2>
-<h4 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white;">IP/Server Address: monkeyscanada.aternos.me</h4>
-<h4 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white;">Port (Only Needed On Bedrock): 49832</h4>
-<h3> </h3>
+<h2>This Server Is A Java And Bedrock Server!</h2>
+<h4>IP/Server Address: monkeyscanada.aternos.me</h4>
+<h4>Port (Only Needed On Bedrock): 49832</h4>
+<h3>If You Are On Java And You Get "Connection Reset" Error Try Joining The Server Again, It Will Typically Fix The Problem!</h3>
 
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white;">If You Are On Java And You Get "Connection Reset" Error Try Joining The Server Again, It Will Typically Fix The Problem!</h3>
-<p style="color:black;">spacer</p>
-<p style="color:black;">spacer</p>
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; font-size: 12pt;"> Site Version 1.10</h3>
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; font-size: 10pt;"> Page Version 2.2</h3>
-<p style="color:black;">spacer</p>
-<p style="color:black;">spacer</p>
+<p style="color: #f2b3c0;">spacer</p>
+<p style="color: #f2b3c0;">spacer</p>
+<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 12pt;" class="outlined-text"> Site Version 2.0</h3>
+<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 10pt;" class="outlined-text"> Page Version 3.0</h1>
+<p style="color: #f2b3c0;">spacer</p>
+<p style="color: #f2b3c0;">spacer</p>
 <div class="centered-line">
   <a href="https://dsc.gg/monkeys-canada" class="social-icon" target="_blank"><i class="fab fa-discord"></i></a>
   <a href="https://youtube.com/@monkeyscanada" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -58,5 +109,6 @@
   <a href="https://threads.net/@monkeys.canada" class="social-icon" target="_blank"><i class="fab fa-threads"></i></a>
   <a href="https://x.com/monkeys_canada" class="social-icon" target="_blank"><i class="fab fa-x-twitter"></i></a>
 </div>
+
 </body>
 </html>

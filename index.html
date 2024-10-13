@@ -6,7 +6,7 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Home - Monkeys Canada" />
   <meta property="og:description" content="The Home Page For Monkeys Canada" />
-  <meta property="og:url" content="https://monkeys-canada.github.io/" />
+  <meta property="og:url" content="https://monkeys-canada.github.io/index.html"/>
   <meta property="og:image" content="https://monkeys-canada.github.io/PROFILE%20PICTURE%20PINK.jpg" />
   <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
     .social-icon {
       margin: 0 10px;
       font-size: 24px;
-      color: white;
+      color: #f36a85;
       text-decoration: none;
     }
     @font-face {
@@ -29,31 +29,66 @@
       font-weight: bold;
       font-style: normal;
     }
+    /* Style the spacer elements */
+    .spacer {
+      color: #f2b3c0; /* Match background color */
+    }
+    .outlined-text {
+      text-shadow: 
+                -2px -2px 0 white,  /* Top-left */
+                0px -2px 0 white,   /* Top */
+                2px -2px 0 white,   /* Top-right */
+                -2px 0px 0 white,   /* Left */
+                2px 0px 0 white,    /* Right */
+                -2px 2px 0 white,   /* Bottom-left */
+                0px 2px 0 white,    /* Bottom */
+                2px 2px 0 white;    /* Bottom-right */
+    }
+    a {
+      color: #f36a85;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
   <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
+  <script>
+    // Function to check if the device is mobile
+    function isMobile() {
+      return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
+    }
+
+    // Apply underline to all links if the device is mobile
+    if (isMobile()) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('a');
+        links.forEach(function(link) {
+          link.style.textDecoration = 'underline';
+        });
+      });
+    }
+  </script>
 </head>
 
-<body style="background-color:black;">
+<body style="background-color:#f2b3c0;">
 <img src="PROFILE PICTURE PINK.jpg" alt="Your Image" style="display: block; margin: 0 auto; width: 128px; height: 128px;" />
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; text-align: center;"><a style="font-size: 22pt; color: white; " href="https://monkeys-canada.github.io/index.html">Home</a></h3>
-<p>spacer</p>
-<p>spacer</p>
-<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; ">Welcome To The Monkeys Canada Website</h1>
-<h1>spacer</h1>
-<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color:white;">Web Projects</h2>
-<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; " href="https://monkeys-canada.github.io/papasarchive.html">Papa's Games Archive</a></h3>
-<h1>spacer</h1>
-<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white;">Info Pages</h2>
-<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; " href="https://monkeys-canada.github.io/minecraftserver.html">Minecraft Server Info</a></h3>
-<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; " href="https://monkeys-canada.github.io/905thevibe.html">90.5 The Vibe Info</a></h3>
-<h1>spacer</h1>
-<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white;">Check Out The Beta Site</h2>
-<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; " href="https://monkeys-canada.github.io/betasite/index.html">Click Here For Beta Site</a></h3>
-<h1>spacer</h1>
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; font-size: 12pt;"> Site Version 1.10</h3>
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: white; font-size: 10pt;"> Page Version 1.4</h3>
-<h1>spacer</h1>
-<h1> </h1>
+<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; text-align: center;"><a style="font-size: 22pt; color: #f36a85;" href="https://monkeys-canada.github.io/index.html">Home</a></h3>
+<p class="spacer">spacer</p>
+<p class="spacer">spacer</p>
+<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;" class="outlined-text">Welcome To The Monkeys Canada Website</h1>
+<h1 class="spacer">spacer</h1>
+<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color:#f36a85;" class="outlined-text">Web Projects</h2>
+<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;" class="outlined-text" href="https://monkeys-canada.github.io/flasharchive.html">Flash Game Archive</a></h3>
+<h1 class="spacer">spacer</h1>
+<h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;" class="outlined-text">Info Pages</h2>
+<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;" class="outlined-text" href="https://monkeys-canada.github.io/minecraftserver.html">Minecraft Server Info</a></h3>
+<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;" class="outlined-text" href="https://monkeys-canada.github.io/905thevibe.html">90.5 The Vibe Info</a></h3>
+<h1 class="spacer">spacer</h1>
+<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 12pt;" class="outlined-text"> Site Version 2.0</h3>
+<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 10pt;" class="outlined-text"> Page Version 2.0</h1>
+<h1 class="spacer">spacer</h1>
+<h1 class="spacer"></h1>
 
 <div class="centered-line">
   <a href="https://dsc.gg/monkeys-canada" class="social-icon" target="_blank"><i class="fab fa-discord"></i></a>
