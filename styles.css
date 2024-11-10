@@ -61,7 +61,7 @@ button {
     color: #f36a85;
     text-decoration: none;
 }
-h3 {
+h1, h2, h3, h4 {
     color: #f36a85; /* Set text color for h3 elements */
 }
 a {
