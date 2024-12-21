@@ -1,7 +1,7 @@
 // Array of profile picture file names
 const profilePictures = [
     'GIRL PINK.png',
-    'GIRL ALL FLAGS.png'
+    'GIRL AROACE TRANS TRANSFEM.png'
 ];
 
 // Function to get a random picture from the array
