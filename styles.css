@@ -66,6 +66,15 @@ h1, h2, h3, h4 {
 }
 .textthatneedsthis {
     color: #f36a85; /* Set text color for h3 elements */
+    text-shadow: 
+    -2px -2px 0 white,  /* Top-left */
+    0px -2px 0 white,   /* Top */
+    2px -2px 0 white,   /* Top-right */
+    -2px 0px 0 white,   /* Left */
+    2px 0px 0 white,    /* Right */
+    -2px 2px 0 white,   /* Bottom-left */
+    0px 2px 0 white,    /* Bottom */
+    2px 2px 0 white;    /* Bottom-right */
 }
 a {
     color: #f36a85; /* Set link color */
