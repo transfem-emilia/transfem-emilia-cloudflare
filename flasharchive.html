@@ -31,6 +31,28 @@
           });
         }
       </script>
+        <script>
+          async function fetchCommitCount() {
+            const owner = "transfem-emilia";  // Your GitHub username
+            const repo = "transfem-emilia.github.io";  // Your repository name
+            const branch = "main";  // Default branch
+            try {
+                const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits?per_page=1&sha=${branch}`);
+                const linkHeader = response.headers.get("Link");
+                if (linkHeader) {
+                    const match = linkHeader.match(/&page=(\d+)>; rel="last"/);
+                    if (match) {
+                        document.getElementById("commit-count").textContent = `Commit ${match[1]}`;
+                    }
+                } else {
+                    const commits = await response.json();
+                    document.getElementById("commit-count").textContent = `Commit ${commits.length}`;
+                }
+            } catch (error) {
+                console.error("Error fetching commit count:", error);
+            }
+          }
+        </script>
 </head>
 <body>
     <body style="background-color:#f2b3c0;">
@@ -48,9 +70,7 @@
 
     <script src="flash archive backend.js"></script>
     
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 12pt;" class="outlined-text"> Site Version 4.5</h3>
-<h1 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 10pt;" class="outlined-text"> Page Version 4.2</h1>
-<h3 style="font-size: 8pt; color:#f36a85;" class="outlined-text"> 2025-01-21 Build Of Ruffle</h3>
+    <h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 12pt;" class="outlined-text" id="commit-count">Commit XX</h3>
     <p style="color:#f2b3c0;">spacer</p>
     <p style="color:#f2b3c0;">spacer</p>
     <div class="centered-line">
