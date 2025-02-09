@@ -30,23 +30,6 @@
       });
     }
   </script>
-<script>
-  async function fetchCommitCount() {
-    try {
-      const response = await fetch("https://api.github.com/repos/transfem-emilia/transfem-emilia.github.io/commits");
-      const data = await response.json();
-      const commitCount = data.length;
-
-      // Update the text with the actual commit number
-      document.getElementById("commit-count").textContent = `Commit ${commitCount}`;
-    } catch (error) {
-      console.error("Failed to fetch commit count:", error);
-    }
-  }
-
-  // Call the function when the page loads
-  fetchCommitCount();
-</script>
 </head>
 
 <body>
@@ -69,7 +52,8 @@
 
 <p style="color: #f2b3c0;">spacer</p>
 <p style="color: #f2b3c0;">spacer</p>
-<h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; font-size: 12pt;" class="outlined-text" id="commit-count">Commit XX</h3>
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/transfem-emilia/transfem-emilia.github.io?style=flat&label=Commit&color=f36a85">
+
 <p style="color: #f2b3c0;">spacer</p>
 <p style="color: #f2b3c0;">spacer</p>
 <div class="centered-line">
