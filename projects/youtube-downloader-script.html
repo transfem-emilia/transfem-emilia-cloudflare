@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Home - Emilia Vega" />
+  <meta property="og:description" content="The Home Page For Emilia Vega" />
+  <meta property="og:url" content="https://transfem-emilia.github.io/index.html"/>
+  <meta property="og:image" content="https://transfem-emilia.github.io/WavingGirlTransCanadaFlag.png" />
+  <meta property="og:type" content="website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Emilia Vega</title>
+  <link rel="shortcut icon" type="image/x-icon" href="GIRL PINK.ico">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
+  <script>
+    // Function to check if the device is mobile
+    function isMobile() {
+      return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
+    }
+
+    // Apply underline to all links if the device is mobile
+    if (isMobile()) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('a');
+        links.forEach(function(link) {
+          link.style.textDecoration = 'underline';
+        });
+      });
+    }
+  </script>
+</head>
+
+<body style="background-color:#f2b3c0;">
+  <div id="profile-container">
+    <img id="profile-pic" src="WavingGirlTransCanadaFlag.png" alt="Profile Picture" style="display: block; margin: 0 auto; width: 128px; height: 128px;">
+</div>
+
+
+<h1 class="outlined-text">YouTube Video Downloader Powershell Script</h1>
+<p>This is a script for use with Windows PowerShell that can download YouTube videos for free.</p>
+
+<h2>I. Requirements</h2>
+<ul>
+<li>Windows 10/11</li>
+<li>
+    Windows PowerShell (Should be installed by default. If you do not have PowerShell, download it by
+    <a href="https://learn.microsoft.com/en-ca/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5#install-powershell-using-winget-recommended" target="_blank">
+    following the guide from Microsoft
+    </a>)
+</li>
+<li>
+    The latest version of
+    <a href="https://github.com/yt-dlp/yt-dlp/releases/latest" target="_blank">yt-dlp for Windows</a>
+    (download <strong>yt-dlp.exe</strong>)
+    <ul>
+    <li>Make sure to download <strong>all</strong> the dependencies for yt-dlp.</li>
+    </ul>
+</li>
+</ul>
+
+<h2>II. Where To Download</h2>
+<p>
+Download it from the
+<a href="https://github.com/transfem-emilia/youtube-downloader-script/releases/latest" target="_blank">
+    latest release
+</a>.
+</p>
+
+<h2>III. Installation and Setup</h2>
+<ol>
+<li>Place the PowerShell script wherever you’d like to keep it.</li>
+<li>Place <code>yt-dlp.exe</code> wherever you’d like to keep it.</li>
+<li>Right-click the script and click <code>Edit in Notepad</code>.</li>
+<li>
+    Go to line 73, which contains:<br />
+    <code>$ytDlpPath = "C:\Path\To\yt-dlp.exe" # Update this!</code>
+</li>
+<li>
+    Replace <code>C:\Path\To\yt-dlp.exe</code> with the correct path to your <code>yt-dlp.exe</code>.
+</li>
+</ol>
+
+<h2>IV. Using The Script</h2>
+<ol>
+<li>
+    Right-click the script and click <code>Run in PowerShell</code>.
+    <ul>
+    <li>
+        Alternatively, you can use a batch script for easier execution. See
+        <a href="https://github.com/transfem-emilia/youtube-downloader-script/blob/main/batch-script/Using-A-Batch-Script.md" target="_blank">
+        Using A Batch Script
+        </a>.
+    </li>
+    </ul>
+</li>
+<li>A window will open asking for the video URL. Paste it in.</li>
+<li>Click <code>OK</code>.</li>
+<li>
+    The window will show a progress bar. When it closes, your video is downloaded to
+    <code>C:\Users\your-user\Videos\Downloaded Videos</code>.
+</li>
+</ol>
+<h1 class="spacer">spacer</h1>
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/transfem-emilia/transfem-emilia.github.io?style=flat&label=Commit&color=f36a85">
+
+<h1 class="spacer">spacer</h1>
+<h1 class="spacer"></h1>
+
+<div class="centered-line">
+  <a href="https://dsc.gg/transfem-emilia" class="social-icon" target="_blank"><i class="fab fa-discord"></i></a>
+  <a href="https://tiktok.com/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <a href="https://youtube.com/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://instagram.com/transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://threads.net/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-threads"></i></a>
+  <a href="https://bsky.app/profile/okbuthereswhati.substack.com" class="social-icon" target="_blank"><i class="fab fa-bluesky"></i></a>
+  <a href="https://snapchat.com/t/iw3H3PfN" class="social-icon" target="_blank"><i class="fab fa-snapchat"></i></a>
+  <a href="https://x.com/transfem_emilia" class="social-icon" target="_blank"><i class="fab fa-x-twitter"></i></a>
+</div>
+
+</body>
+</html>
