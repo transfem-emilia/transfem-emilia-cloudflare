@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { name: "Papa's Scooperia", file: "papasscooperia_v102.swf" },
         { name: "Papa's Sushiria", file: "papassushiria.swf" },
         { name: "Papa's Taco Mia", file: "papastacomia.swf" },
-        { name: "Papa's Wingeria", file: "papaswingeria.swf" },
-        { name: "Moto X3M", file: "MotoX3M.swf"}
+        { name: "Papa's Wingeria", file: "papaswingeria.swf" }
     ];
 
     const buttonsContainer = document.querySelector('.buttons');
