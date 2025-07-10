@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     const gameList = [
-        { name: "Papa Louie 1", file: "papalouie_v2.swf" },
-        { name: "Papa Louie 2", file: "PapaLouie2.swf" },
-        { name: "Papa Louie 3", file: "PapaLouie3.swf" },
         { name: "Papa's Bakeria", file: "papasbakeria.swf" },
         { name: "Papa's Burgeria", file: "papasburgeria.swf" },
         { name: "Papa's Cheeseria", file: "papascheeseria_102.swf" },
