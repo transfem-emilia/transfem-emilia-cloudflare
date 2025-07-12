@@ -24,26 +24,27 @@
 
   // 1️⃣ Wait for DOM + Ruffle
   document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      await loadRuffleScript(LOCAL_RUFFLE);
-    } catch {
-      console.warn('Local Ruffle failed, falling back to CDN');
-      await loadRuffleScript(RUFFLE_CDN);
-    }
-
+  let usingCDN = false;
+  try {
+    await loadRuffleScript(LOCAL_RUFFLE);
+  } catch {
+    console.warn('Local Ruffle failed, falling back to CDN');
+    await loadRuffleScript(RUFFLE_CDN);
+    usingCDN = true;
+  }
     // 2️⃣ Global configuration
-    window.RufflePlayer = window.RufflePlayer || {};
-    window.RufflePlayer.config = {
-      publicPath: LOCAL_RUFFLE.replace(/ruffle\.js$/, ''),
-      polyfills: true,
-      allowScriptAccess: false,
-      autoplay: 'auto',
-      unmuteOverlay: 'visible',
-      scale: 'showAll',
-      allowFullscreen: true,
-      logLevel: 'info',
-      // ...other global defaults
-    };
+  window.RufflePlayer = window.RufflePlayer || {};
+  window.RufflePlayer.config = {
+    publicPath: usingCDN ? 'https://unpkg.com/@ruffle-rs/ruffle/' : '/ruffle/',
+    polyfills: true,
+    allowScriptAccess: false,
+    autoplay: 'auto',
+    unmuteOverlay: 'visible',
+    scale: 'showAll',
+    allowFullscreen: true,
+    logLevel: 'info',
+    // ...other config options
+  };
 
     // 3️⃣ Setup UI
     const games = [
