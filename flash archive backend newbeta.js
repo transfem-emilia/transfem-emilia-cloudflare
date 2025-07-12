@@ -93,6 +93,8 @@
       player.ruffle().config = { allowScriptAccess: false };
       player.style.width = '100%';
       player.style.height = '100%';
+      player.style.setProperty('--splash-screen-background', '#3c2a34'); // soft pink, for example
+      player.style.setProperty('--logo-display', 'none'); // hide the logo
       container.appendChild(player);
 
       // Metadata/event handlers
