@@ -8,7 +8,7 @@
 
 (function() {
   const RUFFLE_CDN = "https://unpkg.com/@ruffle-rs/ruffle";
-  const LOCAL_RUFFLE = "/path/to/ruffle/ruffle.js";
+  const LOCAL_RUFFLE = "/ruffle/ruffle.js";
 
   // 0️⃣ Inject Ruffle script tag (prefers local, falls back to CDN)
   function loadRuffleScript(src) {
