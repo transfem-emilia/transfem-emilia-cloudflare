@@ -71,7 +71,7 @@
     games.forEach(({ name, file }) => {
       const b = document.createElement('button');
       b.textContent = name;
-      b.onclick = () => loadSWF(file);
+      b.onclick = () => loadSWF(`/swfs/${file}`);
       btns.appendChild(b);
     });
 
