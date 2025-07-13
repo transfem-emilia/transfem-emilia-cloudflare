@@ -30,10 +30,30 @@
       });
     }
   </script>
+  <script>
+      // Replace with your Pastebin *raw* link
+      const pastebinURL = "https://pastebin.com/raw/WY7aGbsY";
+
+      fetch(pastebinURL)
+        .then(response => response.text())
+        .then(data => {
+          const flag = data.trim();
+
+          if (flag === "1") {
+            // Redirect to your maintenance page
+            window.location.href = "/503maintain.html"; // Change to your actual path
+          }
+          // If "0", do nothing and continue loading the page
+        })
+        .catch(error => {
+          console.error("Error checking maintenance mode:", error);
+          // Optionally: Redirect or show an error message
+        });
+  </script>
 </head>
 
 <body style="background-color:#3c2a34;">
-<h3 style="text-align: center; font-size: 40pt; font-family: 'Mea Culpa';">Emilia Selene</h3>
+<h3 style="text-align: center; font-size: 40pt; font-family: 'Mea Culpa';"><a href="https://transfem-emilia.pages.dev/" class="no-underline"></a>Emilia Selene</a></h3>
 <h3 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85; text-align: center;"  ><a style="font-size: 22pt; color: #f36a85;" href="https://transfem-emilia.pages.dev/index.html">Home</a></h3>
 <p class="spacer">spacer</p>
 <p class="spacer">spacer</p>
@@ -44,7 +64,7 @@
 <h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;"   href="https://transfem-emilia.pages.dev/crf/">Emilia's Copy Of The Canadian Charter Of Rights And Freedoms/La copie de la Charte canadienne des droits et libertés d’Emilia &rarr;</a></h3>
 <h1 class="spacer">spacer</h1>
 <h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color:#f36a85;"  >Web Projects</h2>
-<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;"   href="https://transfem-emilia.pages.dev/flasharchive.html">Flash Game Archive &rarr;</a></h3>
+<h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;"   href="https://flash-archive.pages.dev/">Emilia's Flash Game Archive &rarr;</a></h3>
 <h1 class="spacer">spacer</h1>
 <h2 style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color:#f36a85;"  >GitHub Projects</h2>
 <h3><a style="font-family: 'SF Pro Display', sans-serif; font-weight: bold; color: #f36a85;"   href="https://transfem-emilia.pages.dev/projects/youtube-downloader-script.html">YouTube Video Downloader Powershell Script &rarr;</a></h3>
