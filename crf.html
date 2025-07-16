@@ -65,6 +65,61 @@
 <p style="color: #3c2a34;">spacer</p>
 <button onclick="window.location.href='https://github.com/transfem-emilia/crf/releases/latest'">Click Here For All Downloads/Cliquez ici pour tous les téléchargements</button>
 <p style="color: #3c2a34;">spacer</p>
+<label for="pdfSelect" style="color: #f36a85">Choose a PDF to open:</label>
+  <select id="pdfSelect" onchange="openPDF()">
+    <option value="">-- Select PDF --</option>
+    <option value="crf/Algonquin.pdf">Algonquin</option>
+    <option value="crf/Arabic.pdf">Arabic (عربي)</option>
+    <option value="crf/Armenian.pdf">Armenian (հայ)</option>
+    <option value="crf/Creole.pdf">Creole</option>
+    <option value="crf/Croatian.pdf">Croatian (Hrvatski)</option>
+    <option value="crf/Dene suline.pdf">Dëne Sułine'</option>
+    <option value="crf/Dutch.pdf">Dutch (Nederlands)</option>
+    <option value="crf/English.pdf">English</option>
+    <option value="crf/Farsi.pdf">Farsi (فارسی)</option>
+    <option value="crf/Filipino.pdf">Filipino (Pilipino)</option>
+    <option value="crf/French.pdf">French (Français)</option>
+    <option value="crf/German.pdf">German (Deutsch)</option>
+    <option value="crf/Greek.pdf">Greek (ελληνικά)</option>
+    <option value="crf/Hebrew.pdf">Hebrew (עברית)</option>
+    <option value="crf/Hindi.pdf">Hindi (हिन्दी)</option>
+    <option value="crf/Hungarian.pdf">Hungarian (Magyar)</option>
+    <option value="crf/Inuktitut (North Baffin).pdf">Inuktitut (North Baffin)</option>
+    <option value="crf/Inuktitut.pdf">Inuktitut</option>
+    <option value="crf/Italian.pdf">Italian (Italiano)</option>
+    <option value="crf/Japanese.pdf">Japanese (日本語)</option>
+    <option value="crf/Korean.pdf">Korean (한국어)</option>
+    <option value="crf/Michif Cree.pdf">Michif Cree</option>
+    <option value="crf/Mi’kmaq.pdf">Mi’kmaq</option>
+    <option value="crf/Oji-Cree.pdf">Oji-Cree</option>
+    <option value="crf/Ojibwe.pdf">Ojibwe</option>
+    <option value="crf/Plains Cree.pdf">Plains Cree</option>
+    <option value="crf/Polish.pdf">Polish (Polski)</option>
+    <option value="crf/Portuguese.pdf">Portuguese (Português)</option>
+    <option value="crf/Punjabi.pdf">Punjabi (ਪੰਜਾਬੀ)</option>
+    <option value="crf/Romanian.pdf">Romanian (Română)</option>
+    <option value="crf/Russian.pdf">Russian (Русский)</option>
+    <option value="crf/Serbian.pdf">Serbian (Српски)</option>
+    <option value="crf/Simplified Chinese.pdf">Simplified Chinese (简体中文)</option>
+    <option value="crf/Somali.pdf">Somali (Soomaali)</option>
+    <option value="crf/Spanish.pdf">Spanish (Español)</option>
+    <option value="crf/Swampy Cree.pdf">Swampy Cree</option>
+    <option value="crf/Tamil.pdf">Tamil (தமிழ்)</option>
+    <option value="crf/Traditional Chinese.pdf">Traditional Chinese (繁體中文)</option>
+    <option value="crf/Ukrainian.pdf">Ukrainian (Українська)</option>
+    <option value="crf/Urdu.pdf">Urdu (اردو)</option>
+    <option value="crf/Vietnamese.pdf">Vietnamese (Tiếng Việt)</option>
+  </select>
+
+  <script>
+    function openPDF() {
+      const select = document.getElementById('pdfSelect');
+      const file = select.value;
+      if (file) {
+        window.location.href = file; // Opens the selected PDF
+      }
+    }
+  </script>
 <p style="color: #3c2a34;">spacer</p>
 <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/transfem-emilia/transfem-emilia-cloudflare?style=flat&label=Commit&color=f36a85">
 
