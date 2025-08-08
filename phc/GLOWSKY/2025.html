@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Here Comes The Sun Vol I - Photo Collections - Emilia" />
+  <meta property="og:description" content="Emilia's Photo Collections" />
+  <meta property="og:url" content="https://transfem-emilia.pages.dev/phc/HCTS/vol1.html"/>
+  <meta property="og:image" content="https://transfem-emilia.pages.dev/images/WavingGirlTransCanadaFlag.png" />
+  <meta property="og:type" content="website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Here Comes The Sun Vol I - Photo Collections - Emilia</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./images/Waving Girl Trans Canada Flag.ico">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="css/image-viewer.css">
+  <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
+  <script>
+    // Function to check if the device is mobile
+    function isMobile() {
+      return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/.test(navigator.userAgent);
+    }
+
+    // Apply underline to all links if the device is mobile
+    if (isMobile()) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('a');
+        links.forEach(function(link) {
+          link.style.textDecoration = 'underline';
+        });
+      });
+    }
+  </script>
+  <script>
+      fetch("/status.txt")
+        .then(response => response.text())
+        .then(data => {
+          const flag = data.trim();
+
+          if (flag === "1") {
+            // Redirect to your maintenance page
+            window.location.href = "/503maintain.html"; // Change to your actual path
+          }
+          // If "0", do nothing and continue loading the page
+        })
+        .catch(error => {
+          console.error("Error checking maintenance mode:", error);
+          // Optionally: Redirect or show an error message
+        });
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color:#3c2a34;">
+<h3 style="text-align: center; font-size: 40pt; font-family: 'Mea Culpa';"><a href="https://transfem-emilia.pages.dev/" class="no-underline"></a>Emilia Selene</a></h3>
+<p class="spacer">spacer</p>
+<p class="spacer">spacer</p>
+<h1 class="spacer">spacer</h1>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Show images smaller but keep aspect ratio */
+.row img {
+  width: 100%;
+  max-width: 300px;  /* thumbnail max size */
+  cursor: pointer;
+  opacity: 0.8;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.row img:hover {
+  opacity: 1;
+}
+
+/* Fullscreen overlay container */
+.container {
+  position: fixed; /* fix to viewport */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.container img {
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 0 20px black;
+}
+
+.closebtn {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+}
+
+/* Your sk-chase spinner CSS: */
+.sk-chase {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  animation: sk-chase 2.5s infinite linear both;
+}
+
+.sk-chase-dot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; 
+  animation: sk-chase-dot 2.0s infinite ease-in-out both; 
+}
+
+.sk-chase-dot:before {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 25%;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-chase-dot-before 2.0s infinite ease-in-out both; 
+}
+
+.sk-chase-dot:nth-child(1) { animation-delay: -1.1s; }
+.sk-chase-dot:nth-child(2) { animation-delay: -1.0s; }
+.sk-chase-dot:nth-child(3) { animation-delay: -0.9s; }
+.sk-chase-dot:nth-child(4) { animation-delay: -0.8s; }
+.sk-chase-dot:nth-child(5) { animation-delay: -0.7s; }
+.sk-chase-dot:nth-child(6) { animation-delay: -0.6s; }
+.sk-chase-dot:nth-child(1):before { animation-delay: -1.1s; }
+.sk-chase-dot:nth-child(2):before { animation-delay: -1.0s; }
+.sk-chase-dot:nth-child(3):before { animation-delay: -0.9s; }
+.sk-chase-dot:nth-child(4):before { animation-delay: -0.8s; }
+.sk-chase-dot:nth-child(5):before { animation-delay: -0.7s; }
+.sk-chase-dot:nth-child(6):before { animation-delay: -0.6s; }
+
+@keyframes sk-chase {
+  100% { transform: rotate(360deg); } 
+}
+
+@keyframes sk-chase-dot {
+  80%, 100% { transform: rotate(360deg); } 
+}
+
+@keyframes sk-chase-dot-before {
+  50% {
+    transform: scale(0.4); 
+  } 100%, 0% {
+    transform: scale(1.0); 
+  } 
+}
+
+/* Fullscreen loading overlay */
+#loadingOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #3c2a34; /* dark background to pop spinner */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+}
+
+</style>
+</head>
+<body>
+<div id="loadingOverlay">
+  <div class="sk-chase">
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+  </div>
+</div>
+
+<div style="text-align:center">
+  <h2>Here Comes The Sun Volume I (Wasaga Beach, Ontario)</h2>
+</div>
+
+<div class="row">
+  <img src="images/VOLI/IMG_6251.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+  <img src="images/VOLI/IMG_6259.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+  <img src="images/VOLI/IMG_6303.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+  <img src="images/VOLI/IMG_6306.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+  <img src="images/VOLI/IMG_6513.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+  <img src="images/VOLI/IMG_6516.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+  <img src="images/VOLI/IMG_6556.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+  <img src="images/VOLI/IMG_6558.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+  <img src="images/VOLI/IMG_6560.avif" alt="Image" onclick="showFull(this);" loading="lazy">
+</div>
+
+<div class="container" id="container" onclick="hideFull(event)">
+  <span class="closebtn" onclick="closeFull(event)">&times;</span>
+  <img id="expandedImg" src="" alt="Expanded image">
+</div>
+
+<script>
+function showFull(img) {
+  const container = document.getElementById('container');
+  const expandedImg = document.getElementById('expandedImg');
+  expandedImg.src = img.src; // same high-res src, just bigger display
+  container.style.display = 'flex';
+}
+
+// Close when clicking outside the image
+function hideFull(e) {
+  const expandedImg = document.getElementById('expandedImg');
+  if (e.target !== expandedImg) {
+    e.currentTarget.style.display = 'none';
+  }
+}
+
+// Close when clicking ×
+function closeFull(e) {
+  e.stopPropagation(); // prevent triggering hideFull
+  document.getElementById('container').style.display = 'none';
+}
+
+const galleryImages = document.querySelectorAll('.row img');
+let loadedCount = 0;
+
+galleryImages.forEach(img => {
+  if (img.complete) {
+    incrementCounter();
+  } else {
+    img.addEventListener('load', incrementCounter);
+    img.addEventListener('error', incrementCounter);
+  }
+});
+
+function incrementCounter() {
+  loadedCount++;
+  if (loadedCount === galleryImages.length) {
+    // all images loaded — hide spinner
+    document.getElementById('loadingOverlay').style.display = 'none';
+  }
+}
+
+</script>
+<h1 class="spacer">spacer</h1>
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/transfem-emilia/transfem-emilia-cloudflare?style=flat&label=Version&color=f36a85">
+
+<h1 class="spacer">spacer</h1>
+<h1 class="spacer"></h1>
+
+<div class="centered-line">
+  <a href="https://github.com/transfem-emilia" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://dsc.gg/transfem-emilia" class="social-icon" target="_blank"><i class="fab fa-discord"></i></a>
+  <a href="https://tiktok.com/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <a href="https://youtube.com/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+  <a href="https://instagram.com/transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://threads.net/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-threads"></i></a>
+  <a href="https://bsky.app/profile/okbuthereswhati.substack.com" class="social-icon" target="_blank"><i class="fab fa-bluesky"></i></a>
+  <a href="https://snapchat.com/t/iw3H3PfN" class="social-icon" target="_blank"><i class="fab fa-snapchat"></i></a>
+  <a href="https://x.com/transfem_emilia" class="social-icon" target="_blank"><i class="fab fa-x-twitter"></i></a>
+</div>
+
+</body>
+</html>
