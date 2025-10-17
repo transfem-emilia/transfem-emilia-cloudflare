@@ -51,93 +51,103 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
+<nav class="website-nav">
+<ul>
+  <li><a style="font-family: 'Mea Culpa'; font-size: 20pt; " href="https://northpoint.website">Emilia Selene</a></li>
+  <li><a href="https://eras.northpoint.website/">Eras Tour Archive</a></li>
+  <li><a href="https://5-oclock.northpoint.website">5 O'Clock</a></li>
+  <li><a href="https://flash.northpoint.website">Flash Archive</a></li>
+  <li><a href="./usconstit.html">Constitution</a></li>
+  <li><a href="./crf.html">Charter</a></li>
+  <li><a href="./photos.html">Photo Collections</a></li>
+</ul>
+<div class="hamburger" onclick="this.parentElement.querySelector('ul').classList.toggle('active')">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+</nav>
 <body>
+  <h1 class="h3">Emilia's Copy Of The Canadian Charter Of Rights And Freedoms/La copie de la Charte canadienne des droits et libertés d’Emilia</h1>
+  <p style="color: #3c2a34;">spacer</p>
+  <h2 style="color: #f36a85;">This Is A Copy Of The Canadian Charter Of Rights And Freedoms/Ceci est une copie de la Charte canadienne des droits et libertés</h2>
+  <p style="color: #3c2a34;">spacer</p>
+  <h4 style="color: #f36a85;"><a href="https://open.canada.ca/data/en/dataset/06d31e10-a2a8-4d53-9ff3-567714a0a9f3">This Was Sourced From The Canadian Government On January 24th 2025 At 7:58 PM Eastern Time/Ceci a été obtenu du gouvernement canadien le 24 janvier 2025 à 19:58 heure de l’Est</a></h4>
+  <p style="color: #3c2a34;">spacer</p>
+  <p style="color: #3c2a34;">spacer</p>
+  <div style="text-align: center">
+  <label for="pdfSelect" style="color: #f36a85; text-align: center">Choose a Language to open:</label>
+    <select id="pdfSelect" onchange="openPDF()">
+      <option value="">-- Select Language --</option>
+      <option value="crf/Algonquin.pdf">Algonquin</option>
+      <option value="crf/Arabic.pdf">Arabic (عربي)</option>
+      <option value="crf/Armenian.pdf">Armenian (հայ)</option>
+      <option value="crf/Creole.pdf">Creole</option>
+      <option value="crf/Croatian.pdf">Croatian (Hrvatski)</option>
+      <option value="crf/Dene suline.pdf">Dëne Sułine'</option>
+      <option value="crf/Dutch.pdf">Dutch (Nederlands)</option>
+      <option value="crf/English.pdf">English</option>
+      <option value="crf/Farsi.pdf">Farsi (فارسی)</option>
+      <option value="crf/Filipino.pdf">Filipino (Pilipino)</option>
+      <option value="crf/French.pdf">French (Français)</option>
+      <option value="crf/German.pdf">German (Deutsch)</option>
+      <option value="crf/Greek.pdf">Greek (ελληνικά)</option>
+      <option value="crf/Hebrew.pdf">Hebrew (עברית)</option>
+      <option value="crf/Hindi.pdf">Hindi (हिन्दी)</option>
+      <option value="crf/Hungarian.pdf">Hungarian (Magyar)</option>
+      <option value="crf/Inuktitut (North Baffin).pdf">Inuktitut (North Baffin)</option>
+      <option value="crf/Inuktitut.pdf">Inuktitut</option>
+      <option value="crf/Italian.pdf">Italian (Italiano)</option>
+      <option value="crf/Japanese.pdf">Japanese (日本語)</option>
+      <option value="crf/Korean.pdf">Korean (한국어)</option>
+      <option value="crf/Michif Cree.pdf">Michif Cree</option>
+      <option value="crf/Mi’kmaq.pdf">Mi’kmaq</option>
+      <option value="crf/Oji-Cree.pdf">Oji-Cree</option>
+      <option value="crf/Ojibwe.pdf">Ojibwe</option>
+      <option value="crf/Plains Cree.pdf">Plains Cree</option>
+      <option value="crf/Polish.pdf">Polish (Polski)</option>
+      <option value="crf/Portuguese.pdf">Portuguese (Português)</option>
+      <option value="crf/Punjabi.pdf">Punjabi (ਪੰਜਾਬੀ)</option>
+      <option value="crf/Romanian.pdf">Romanian (Română)</option>
+      <option value="crf/Russian.pdf">Russian (Русский)</option>
+      <option value="crf/Serbian.pdf">Serbian (Српски)</option>
+      <option value="crf/Simplified Chinese.pdf">Simplified Chinese (简体中文)</option>
+      <option value="crf/Somali.pdf">Somali (Soomaali)</option>
+      <option value="crf/Spanish.pdf">Spanish (Español)</option>
+      <option value="crf/Swampy Cree.pdf">Swampy Cree</option>
+      <option value="crf/Tamil.pdf">Tamil (தமிழ்)</option>
+      <option value="crf/Traditional Chinese.pdf">Traditional Chinese (繁體中文)</option>
+      <option value="crf/Ukrainian.pdf">Ukrainian (Українська)</option>
+      <option value="crf/Urdu.pdf">Urdu (اردو)</option>
+      <option value="crf/Vietnamese.pdf">Vietnamese (Tiếng Việt)</option>
+    </select>
 
-<body style="background-color:#3c2a34;">
-<h3 style="text-align: center; font-size: 40pt; font-family: 'Mea Culpa';"><a href="https://northpoint.website/" class="no-underline">Emilia Selene</a></h3>
-<h3 style="text-align: center;"  ><a style="font-size: 22pt;" href="https://northpoint.website/index.html">Home</a></h3>
-<p style="color: #3c2a34;">spacer</p>
-<h1 class="h3">Emilia's Copy Of The Canadian Charter Of Rights And Freedoms/La copie de la Charte canadienne des droits et libertés d’Emilia</h1>
-<p style="color: #3c2a34;">spacer</p>
-<h2 style="color: #f36a85;">This Is A Copy Of The Canadian Charter Of Rights And Freedoms/Ceci est une copie de la Charte canadienne des droits et libertés</h2>
-<p style="color: #3c2a34;">spacer</p>
-<h4 style="color: #f36a85;"><a href="https://open.canada.ca/data/en/dataset/06d31e10-a2a8-4d53-9ff3-567714a0a9f3">This Was Sourced From The Canadian Government On January 24th 2025 At 7:58 PM Eastern Time/Ceci a été obtenu du gouvernement canadien le 24 janvier 2025 à 19:58 heure de l’Est</a></h4>
-<p style="color: #3c2a34;">spacer</p>
-<p style="color: #3c2a34;">spacer</p>
-<div style="text-align: center">
-<label for="pdfSelect" style="color: #f36a85; text-align: center">Choose a Language to open:</label>
-  <select id="pdfSelect" onchange="openPDF()">
-    <option value="">-- Select Language --</option>
-    <option value="crf/Algonquin.pdf">Algonquin</option>
-    <option value="crf/Arabic.pdf">Arabic (عربي)</option>
-    <option value="crf/Armenian.pdf">Armenian (հայ)</option>
-    <option value="crf/Creole.pdf">Creole</option>
-    <option value="crf/Croatian.pdf">Croatian (Hrvatski)</option>
-    <option value="crf/Dene suline.pdf">Dëne Sułine'</option>
-    <option value="crf/Dutch.pdf">Dutch (Nederlands)</option>
-    <option value="crf/English.pdf">English</option>
-    <option value="crf/Farsi.pdf">Farsi (فارسی)</option>
-    <option value="crf/Filipino.pdf">Filipino (Pilipino)</option>
-    <option value="crf/French.pdf">French (Français)</option>
-    <option value="crf/German.pdf">German (Deutsch)</option>
-    <option value="crf/Greek.pdf">Greek (ελληνικά)</option>
-    <option value="crf/Hebrew.pdf">Hebrew (עברית)</option>
-    <option value="crf/Hindi.pdf">Hindi (हिन्दी)</option>
-    <option value="crf/Hungarian.pdf">Hungarian (Magyar)</option>
-    <option value="crf/Inuktitut (North Baffin).pdf">Inuktitut (North Baffin)</option>
-    <option value="crf/Inuktitut.pdf">Inuktitut</option>
-    <option value="crf/Italian.pdf">Italian (Italiano)</option>
-    <option value="crf/Japanese.pdf">Japanese (日本語)</option>
-    <option value="crf/Korean.pdf">Korean (한국어)</option>
-    <option value="crf/Michif Cree.pdf">Michif Cree</option>
-    <option value="crf/Mi’kmaq.pdf">Mi’kmaq</option>
-    <option value="crf/Oji-Cree.pdf">Oji-Cree</option>
-    <option value="crf/Ojibwe.pdf">Ojibwe</option>
-    <option value="crf/Plains Cree.pdf">Plains Cree</option>
-    <option value="crf/Polish.pdf">Polish (Polski)</option>
-    <option value="crf/Portuguese.pdf">Portuguese (Português)</option>
-    <option value="crf/Punjabi.pdf">Punjabi (ਪੰਜਾਬੀ)</option>
-    <option value="crf/Romanian.pdf">Romanian (Română)</option>
-    <option value="crf/Russian.pdf">Russian (Русский)</option>
-    <option value="crf/Serbian.pdf">Serbian (Српски)</option>
-    <option value="crf/Simplified Chinese.pdf">Simplified Chinese (简体中文)</option>
-    <option value="crf/Somali.pdf">Somali (Soomaali)</option>
-    <option value="crf/Spanish.pdf">Spanish (Español)</option>
-    <option value="crf/Swampy Cree.pdf">Swampy Cree</option>
-    <option value="crf/Tamil.pdf">Tamil (தமிழ்)</option>
-    <option value="crf/Traditional Chinese.pdf">Traditional Chinese (繁體中文)</option>
-    <option value="crf/Ukrainian.pdf">Ukrainian (Українська)</option>
-    <option value="crf/Urdu.pdf">Urdu (اردو)</option>
-    <option value="crf/Vietnamese.pdf">Vietnamese (Tiếng Việt)</option>
-  </select>
-
-  <script>
-    function openPDF() {
-      const select = document.getElementById('pdfSelect');
-      const file = select.value;
-      if (file) {
-        window.location.href = file; // Opens the selected PDF
+    <script>
+      function openPDF() {
+        const select = document.getElementById('pdfSelect');
+        const file = select.value;
+        if (file) {
+          window.location.href = file; // Opens the selected PDF
+        }
       }
-    }
-  </script>
-</div>
-<p style="color: #3c2a34;">spacer</p>
-<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/transfem-emilia/transfem-emilia-cloudflare?style=flat&label=Commit&color=f36a85">
+    </script>
+  </div>
+  <p style="color: #3c2a34;">spacer</p>
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/transfem-emilia/transfem-emilia-cloudflare?style=flat&label=Commit&color=f36a85">
 
-<p style="color: #3c2a34;">spacer</p>
-<p style="color: #3c2a34;">spacer</p>
-<div class="centered-line">
-  <a href="https://github.com/transfem-emilia" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-  <a href="https://tiktok.com/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
-  <a href="https://youtube.com/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://instagram.com/shmmerngin.on.13" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://threads.net/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-threads"></i></a>
-  <a href="https://bsky.app/profile/okbuthereswhati.substack.com" class="social-icon" target="_blank"><i class="fab fa-bluesky"></i></a>
-  <a href="https://snapchat.com/t/iw3H3PfN" class="social-icon" target="_blank"><i class="fab fa-snapchat"></i></a>
-  <a href="https://x.com/transfem_emilia" class="social-icon" target="_blank"><i class="fab fa-x-twitter"></i></a>
-  <a href="https://twitch.tv/transfememilia" class="social-icon" target="_blank"><i class="fab fa-twitch"></i></a>
-</div>
+  <p style="color: #3c2a34;">spacer</p>
+  <p style="color: #3c2a34;">spacer</p>
+  <div class="centered-line">
+    <a href="https://github.com/transfem-emilia" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://tiktok.com/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://youtube.com/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://instagram.com/shmmerngin.on.13" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://threads.net/@transfem.emilia" class="social-icon" target="_blank"><i class="fab fa-threads"></i></a>
+    <a href="https://bsky.app/profile/okbuthereswhati.substack.com" class="social-icon" target="_blank"><i class="fab fa-bluesky"></i></a>
+    <a href="https://snapchat.com/t/iw3H3PfN" class="social-icon" target="_blank"><i class="fab fa-snapchat"></i></a>
+    <a href="https://x.com/transfem_emilia" class="social-icon" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://twitch.tv/transfememilia" class="social-icon" target="_blank"><i class="fab fa-twitch"></i></a>
+  </div>
 
 </body>
 </html>
