@@ -50,19 +50,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script>
+    fetch("https://northpoint.website/nav.html") 
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("navbar").innerHTML = html;
+      })
+      .catch(error => {
+        console.error("Error loading navbar:", error);
+      });
+  </script>
 </head>
 
 <div id="navbar"></div>
-<script>
-  fetch("https://northpoint.website/nav.html") 
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById("navbar").innerHTML = html;
-    })
-    .catch(error => {
-      console.error("Error loading navbar:", error);
-    });
-</script>
 
 <body>
   <h3 style="text-align: center; font-size: 50pt; font-family: 'Mea Culpa';"><a href="https://northpoint.website/" class="no-underline"></a>Emilia Selene</a></h3>
