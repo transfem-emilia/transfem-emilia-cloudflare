@@ -1,12 +1,12 @@
 /*
     Content-Security-Policy:
-    default-src * data: blob: 'unsafe-inline' 'unsafe-eval';
-    script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
-    style-src * data: blob: 'unsafe-inline';
-    img-src * data: blob:;
-    connect-src *;
-    font-src * data:;
-    media-src *;
-    frame-src *;
-    object-src *;
-    worker-src * blob:;
+        default-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+        script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+        style-src * data: blob: 'unsafe-inline';
+        img-src * data: blob:;
+        connect-src *;
+        font-src * data:;
+        media-src *;
+        frame-src *;
+        object-src *;
+        worker-src * blob:;
