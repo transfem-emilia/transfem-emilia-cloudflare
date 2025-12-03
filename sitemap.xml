@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://northpoint.website/</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/photos</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/usconstit</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/crf</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/phc/HCTS/vol1</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/phc/HCTS/vol2</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/phc/HCTS/vol3</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/phc/TTM/</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/phc/GITN/vol1</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/phc/FIT/vol1</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/phc/GLOWSKY/2025</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://northpoint.website/usconstit/U.S%20Constitution%20Original%20Text.pdf</loc>
+  <lastmod>2025-12-03T15:04:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
