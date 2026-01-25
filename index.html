@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Emilia</title>
-  <link rel="shortcut icon" type="image/x-icon" href="./images/Waving Girl Trans Canada Flag.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/GOTL.ico">
   <link rel="stylesheet" href="./css/styles.css">
   <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
   <script>
@@ -50,35 +50,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script>
-    fetch("https://www.greatonthelakes.com/nav.html") 
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("navbar").innerHTML = html;
-      })
-      .catch(error => {
-        console.error("Error loading navbar:", error);
-      });
-  </script>
-  <script>
-    fetch("https://www.greatonthelakes.com/footer.html") 
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("footer").innerHTML = html;
-      })
-      .catch(error => {
-        console.error("Error loading footer:", error);
-      });
-  </script>
+  <script src="components.js"></script>
 </head>
 
 <div id="navbar"></div>
 
 <body>
   <p class="spacer">spacer</p>
-  <img src="./images/GOTL Logo.svg" height="100px" style="display: block; margin: auto;">
+  <div id="logo"></div>
   <h3 class="spacer">spacer</h3>
-  <h1>Welcome To Emilia's Website</h1>
+  <h1>Welcome To Emilia Selene Meredith's Site, Great On The Lakes.com (GOTLcom)</h1>
   <h1 class="spacer">spacer</h1>
   <h2>Notice: Due to the ongoing Cloudflare maintenance affecting multiple locations, parts of the website may not load or work as expected. There’s no need to contact me.</h2>
   <h1 class="spacer">spacer</h1>

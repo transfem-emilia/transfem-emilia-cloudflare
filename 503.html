@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Under Maintenance - Emilia Selene</title>
-  <link rel="shortcut icon" type="image/x-icon" href="./images/Waving Girl Trans Canada Flag.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/GOTL.ico">
   <link rel="stylesheet" href="./css/styles.css">
   <script src="https://kit.fontawesome.com/39ffdb166a.js" crossorigin="anonymous"></script>
   <script>
@@ -33,28 +33,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <div id="navbar"></div>
-<script>
-  fetch("https://www.greatonthelakes.com/nav.html") 
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById("navbar").innerHTML = html;
-    })
-    .catch(error => {
-      console.error("Error loading navbar:", error);
-    });
-</script>
-<script>
-    fetch("https://www.greatonthelakes.com/footer.html") 
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("footer").innerHTML = html;
-      })
-      .catch(error => {
-        console.error("Error loading footer:", error);
-      });
-  </script>
+<script src="components.js"></script>
 
 <body>
+    <div id="logo"></div>
     <h3 style="text-align: center; font-size: 22pt;">The website is unavailable due to maintenance and/or server errors.</h3>
     <p style="color:#3c2a34;">spacer</p>
     <p style="color:#3c2a34;">spacer</p>
