@@ -7,6 +7,34 @@ Retrieved 2026-02-24, License - CC BY-SA 3.0
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
 <meta http-equiv="Pragma" content="no-cache"/>
 <meta http-equiv="Expires" content="0"/>
+
+<style>
+.website-nav ul li.nav-dropdown {
+  position: relative;
+}
+
+.website-nav ul li.nav-dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: inherit;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.website-nav ul li.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.website-nav ul li.nav-dropdown .dropdown-menu li {
+  display: block;
+}
+</style>
+
 <nav class="website-nav">
 <ul>
   <li><a href="https://www.greatonthelakes.com/"><img src="https://www.greatonthelakes.com/images/GOTL.svg" height="40"></a></li>
@@ -16,8 +44,13 @@ Retrieved 2026-02-24, License - CC BY-SA 3.0
   <li><a href="https://www.greatonthelakes.com/crf.html">Charter</a></li>
   <li><a href="https://www.greatonthelakes.com/photos.html">Photo Collections</a></li>
   <li></li>
-  <li><a href="https://docs.greatonthelakes.com/">Docs</a></li>
-  <li><a href="https://docs.greatonthelakes.com/changelogs">Changelog</a></li>
+  <li class="nav-dropdown">
+    <a href="https://docs.greatonthelakes.com/welcome">GOTLdoc</a>
+    <ul class="dropdown-menu">
+      <li><a href="https://docs.greatonthelakes.com/welcome-docs">Docs</a></li>
+      <li><a href="https://docs.greatonthelakes.com/changelogs">Changelog</a></li>
+    </ul>
+  </li>
 </ul>
 <div class="hamburger" onclick="this.parentElement.querySelector('ul').classList.toggle('active')">
   <span></span>
